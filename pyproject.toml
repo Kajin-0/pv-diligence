@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pv-diligence"
+version = "0.1.0"
+description = "Evidence-controlled PV module procurement due-diligence report generator"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Terence Fisher"}]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "pydantic>=2.0",
+    "typer>=0.12",
+    "rich>=13.0",
+    "jinja2>=3.1",
+    "markdown>=3.5",
+]
+
+[project.scripts]
+pvdiligence = "pvdiligence.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pvdiligence*"]
